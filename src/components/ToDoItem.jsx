@@ -1,6 +1,6 @@
 import {useForm} from "react-hook-form"
 
-const ToDoItem = ({handleIsCompleted}) => {
+const ToDoItem = ({}) => {
 
     const {register, handleSubmit} = useForm();
 
@@ -8,7 +8,7 @@ const ToDoItem = ({handleIsCompleted}) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <input className="check" onChange={handleIsCompleted} type="checkbox" placeholder="check-box" name="check-box"
+            <input className="check" type="checkbox" placeholder="check-box" name="check-box"
                    ref={register}/>
         </form>
     );

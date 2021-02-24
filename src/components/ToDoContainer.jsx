@@ -14,7 +14,7 @@ const ToDoContainer = () => {
     //Estado para manejar el nuervo ToDo
     const [newToDo, setNewToDo]=useState(null)
 
-
+    const [updateToDo, setUpdateToDo]=useState(null);
 
     //useEffect para obtener los datos
 
@@ -49,6 +49,8 @@ const ToDoContainer = () => {
         }
     }, [newToDo])
 
+
+
     const handleDeleteToDo=(id)=>{
         setId(id)
     }
@@ -58,7 +60,7 @@ const ToDoContainer = () => {
     }
 
     const myArrayOfToDo=toDo.map((value, index) =>
-        <ToDo id={value._id} task={value.task} student={value.student} key={index+1} onDelete={handleDeleteToDo}/>
+        <ToDo id={value._id} task={value.task} student={value.student} completed={value.isCompleted} key={index+1} onDelete={handleDeleteToDo}/>
     )
 
     return (
