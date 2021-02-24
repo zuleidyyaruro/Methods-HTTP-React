@@ -9,11 +9,11 @@ const ToDo=({task, student, onDelete, id, completed })=>{
         setIsCompleted(!isCompleted);
     }
 
-    console.log(isCompleted)
+
 
     return(
         <div className="list-container" >
-            <ToDoItem handleIsComplete={handleChangeIsCompleted}/>
+            <ToDoItem completed={isCompleted} handleIsComplete={handleChangeIsCompleted}/>
             <span>{task} - {student} - {isCompleted ? "Completed": "Incomplete"} </span>
             <button onClick={()=>onDelete(id)}>Delete</button>
         </div>
